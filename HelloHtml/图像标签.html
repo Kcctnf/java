@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图像标签</title>
+		
+		<!--
+	img标签
+		属性:src:加载图片资源的url
+		    alt:替代文本(当图片失效的时候,替代文本起作用)
+	        width/height:图片的宽高(px/百分比列)
+	        title:鼠标悬浮到图片上的文字提示
+	        
+	    在img中指定样式属性:(所有的html标签都有style)
+	      	css的display属性:none  操作图片的隐藏
+-->
+<script>
+	//点击隐藏：将图片隐藏掉
+	function hideImg(){
+		//1)通过id="img1"获取标签对象
+		var img = document.getElementById("img1") ;
+		//2）通过img标签对象操作style属性 的dispaly属性
+		img.style.display="none" ;//隐藏
+		
+	}
+	
+	//点击显示，将图片显示
+	function showImg(){
+		//1)通过id="img1"获取标签对象
+		var img = document.getElementById("img1") ;
+		//2)通过img标签对象操作style属性 的dispaly属性
+		img.style.display="block" ;//显示图片
+	}
+</script>
+
+	</head>
+	<body>
+<!--<img style="display: none;" src="img/f001a62f-a49d-4a4d-b56f-2b6908a0002c_g.jpg" width="100%" />-->
+<img id="img1" alt="这是一个广告图片" title="广告" src="img/图.jpg" width="100%" />
+<button id="show" onclick="showImg()">显示</button>
+<button id="hide" onclick="hideImg()">隐藏</button>
+	</body>
+</html>

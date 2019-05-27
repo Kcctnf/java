@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格标签</title>
+		<!--
+	布局方式
+		1)早期：table标签:表格布局
+		2)div+css布局方式：层级布局
+		
+		table标签
+			属性：border ：边框大小
+			    align:表格对齐方式
+			    cellspacing:单元格和边框之间的空隙
+			    bgcolor:背景色
+			    widht/height:宽高
+			    
+			子标签：
+			   tr:行标签
+			   th：表头标签：自动居中并且加粗
+			   td：单元格
+			   
+			   
+			单元格的合并：
+				行合并：rowspan:占了几个单元格
+				列合并:colspan：占了几个单元格
+-->
+	</head>
+	<body>
+		<table border="1px" bgcolor="pink" cellspacing="0" width="300px" align="center" height="300px">
+	<tr>
+		<th>姓名</th>
+		<th>班级</th>
+		<th>成绩</th>
+	</tr>
+	<tr align="center">
+		<td rowspan="2">狗娃</td>
+		<td>
+			<!--嵌套表格-->
+			<table border="1px" cellspacing="0" height="100%" width="100%">
+				<tr> 
+					<td>11</td>
+					<td>12</td>
+					<td>13</td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>22</td>
+					<td>23</td>
+				</tr>
+				<tr>
+					<td>31</td>
+					<td>32</td>
+					<td>33</td>
+				</tr>
+			</table>
+		</td>
+		<td>90</td>
+	</tr>
+	<tr align="center">
+		<!--<td>狗蛋</td>-->
+		<td>计算机1班</td>
+		<td>87</td>
+	</tr>
+	<tr align="center">
+		<td>狗剩</td>
+		<td colspan="2">计算机1班</td>
+		<!--<td>79</td>-->
+	</tr>
+</table>
+	</body>
+</html>
