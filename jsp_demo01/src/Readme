@@ -1,0 +1,63 @@
+1.jsp文件中的元素
+
+     *模板元素（html,xml）
+     *注释（普通注释，隐藏注释，代码注释）
+     *指令元素（<%@page>,<%@include>,<%@taglib>）
+     *脚本元素（声明<%!>,表达式<% = %>,Scriiptlets<%%>）
+         JSP脚本指的就是在JSP页面中执行的java代码。
+         语法：<% Java代码 %>
+         在<% Java代码 %> 这一标签内的可执行java代码我们就称之为是JSP脚本。
+
+         JSP声明指的就是在JSP页面中定义变量或者方法
+         语法：
+         <%! Java代码 %>
+
+         在JSP页面中执行的表达式
+         语法：
+         <!-- 注意:JSP表达式不以分号结尾。-->
+         <% =表达式 %>
+     *动作元素（jsp:useBean,jsp:setProperty,jsp:getProperty,jsp:param,jsp:include,jsp）
+2.
+
+    什么是session？
+    session表示客户端与服务器的一次会话
+    Web中的session指的是用户浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户
+    浏览这个网站所花费的时间
+    session实际上是一个特定的时间概念
+    在服务器的内存中保存着不同用户的session
+    session对象
+    session对象是一个JSP的内置对象
+    session对象在第一个JSP页面被装载时自动创建，完成会话期管理。
+    从一个客户打开浏览器并连接到服务器开始，到客户关闭浏览器离开这个服务器结束，被称为一个会
+    话。
+    当一个客户访问一个服务器时，可能会在服务器的几个页面之间切换，服务器应当通过某种办法知道这
+    是一个客户，就需要session对象。
+    session对象是HttpSession类的实例
+    session对象常用方法参见API： javax.servlet.http.HttpSession
+
+3.在javaWeb当中的绝对路径和相对路径
+
+    <%--
+                ../  ---->代表的是上级目录
+                .或者./   ---->代表的是当前的目录
+                /    ---->代表的是根目录，在web应用当中的根目录就是webapp
+
+    --%>
+4.Jsp + Servlet + JavaBean + DB
+
+
+5.sendredirect  重定向
+    respons.sendredirct()
+   1.请求的路径会发生变化
+   2.来自不同的request，不是同一个request
+   3.两个会话（2个session）
+6.forward  请求转发
+   1.请求路径不会发生生变化
+   2.来自同一个request
+   3.一个session（一个会话）
+3.在jsp当中使用javabean
+
+内置对象（范围对象） page只对当前页面有效，不能进行页面跳转传递值信息
+request  请求对象  只在一个request请求中有用
+session
+caplication
