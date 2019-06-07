@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--applicationContext.xml文件是spring的核心配置文件
+        配置类和类之间的关系，也就是说，我们不用再程序当中new对象了
+        把对象交给spring来管理
+    -->
+    <!--注册Bean这个类给spring容器-->
+    <bean id="bean1" class="com.spring.demo.Bean1">
+        <!--<property name="intValue" value="10"/>-->
+        <!--普通属性-->
+        <property name="intValue">
+            <value>100</value>
+        </property>
+        <!--字符串-->
+        <property name="strValue" value="arvin"/>
+        <!--字符串数组-->
+        <property name="strArray">
+            <list>
+                <value>strArray1</value>
+                <value>strArray2</value>
+                <value>strArray3</value>
+            </list>
+        </property>
+
+        <property name="listValue">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+            </list>
+        </property>
+
+        <property name="mapValue">
+            <map>
+                <entry key="key1" value="value1"/>
+                <entry key="key2" value="value2"/>
+                <entry key="key3" value="value3"/>
+            </map>
+        </property>
+
+        <property name="setValue">
+            <set>
+                <value>value1</value>
+                <value>value2</value>
+                <value>value3</value>
+            </set>
+        </property>
+
+        <property name="dateValue" value="2019-06-06"/>
+
+    </bean>
+
+
+    <!--注册自定义属性编辑器给spring容器-->
+    <bean id="myCustomEditor" class = "org.springframework.beans.factory.config.CustomEditorConfigurer">
+
+        <property name="customEditors">
+            <map>
+                <entry key = "java.util.Date" value = "com.spring.demo.PropertyEdit"/>
+            </map>
+        </property>
+
+
+
+    </bean>
+
+</beans>

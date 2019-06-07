@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--applicationContext.xml文件是spring的核心配置文件
+        配置类和类之间的关系，也就是说，我们不用再程序当中new对象了
+        把对象交给spring来管理
+    -->
+
+    <bean id = "bean3" class = "com.spring.demo.Bean3">
+
+        <property name="id" value = "1"/>
+        <property name="password" value = "pppppp"/>
+        <property name="username" value = "arvin"/>
+    </bean>
+    <bean id = "bean4" class = "com.spring.demo.Bean4">
+
+        <property name="age" value = "19"/>
+        <property name="gender" value = "男"/>
+        <property name="hobity" value = "play basketball"/>
+    </bean>
+
+    <bean id = "bean5" class = "com.spring.demo.Bean5">
+
+        <property name="address" value = "陕西宝鸡"/>
+    </bean>
+
+    <bean id = "bean2" class = "com.spring.demo.Bean2" scope="singleton">
+        <property name="bean3" ref = "bean3"/>
+        <property name="bean4" ref = "bean4"/>
+        <property name="bean5" ref = "bean5"/>
+    </bean>
+    </beans>
