@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Date对象</title>
+		<script>
+			/**
+			 * java中日期对象：Date    java.util.Date
+			 * 创建日期对象：Date date  = new Date();  
+			 * Date日期的格式---->r日期文本格式："2019-10-03 HH:mm:ss"
+			 * SimpleDateFormart("yyy-MM-dd HH:mm:ss")
+			 *      format(date);日期化格式
+			 * 日期文本格式"2019-6-7 HH:mm:ss"--->Date日期格式
+			 *      String 是= "2019-02-04"
+			 *      parse(s);日期解析
+			 */
+			
+			
+			//js 中的Date对象
+			var date = new Date();
+			//document.write(date);
+			获取年份:getFullYear()
+			document.write(date.getFullYear()+"年");
+			document.write(date.getMonth()+"月");
+			document.write(date.getDay()+ "日");
+			document.write(date.getHours()+":");
+			document.write(date.getMinutes()+":");
+			document.write(date.getSeconds());
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

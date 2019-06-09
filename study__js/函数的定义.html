@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>函数的定义</title>
+		<!--
+        	java中定义方法：public void check(){};
+        js 中的函数定义格式：
+             function
+             
+             
+             注意事项：
+             1）在js中定义函数，函数的形式参数不能带数据类型（不能用var定义）
+             2）在js中return语句，采用赋值调用
+             3）在js中定义同名的函数没有重裁的概念，后边定义的会将前边的覆盖掉
+             4）无论形式参数个数大于还是小于实际参数，函数都会被调用，
+                                                   形式参数个数
+             5）存在默认数组：数组名：arguments
+                  	作用：将实际参数赋值给形式参数
+                  	
+             网页定时器：  
+          window.setInterval("任务",毫秒数)；经过多少秒后重复执行
+          window.setTimeout("任务",毫秒数)；经过多少秒后执行一次
+        -->
+    <script>
+		//定义求和函数
+		//形式参数不能用var定义
+//		function add(a,b){
+//			var result = a + b;
+//			//document.write("结果是：" + result);
+//			return result;
+//		}
+//		
+		
+		function add(a,b,c){
+			alert(arguments.length);
+			for(var i = 0;i < arguments.length;i++){
+				alert(arguments[i]);
+			}
+			var result = a + b + c;
+			document.write("结果是：" + result);
+		}
+		
+		add(10,20,30);
+		//add(10,20,30,40);
+		
+		
+//		// 单独调用add(10,20);
+//		//赋值调用
+//		var c = add(10,20);document.write("结果是:" + c);
+	</script>
+	</head>
+	
+	<body>
+	</body>
+</html>
