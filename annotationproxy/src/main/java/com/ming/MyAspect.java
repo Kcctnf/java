@@ -13,6 +13,7 @@ public class MyAspect {
     private Object targetObject = null;
 
     public MyAspect(Object obj){
+
         this.targetObject = obj;
     }
     /**

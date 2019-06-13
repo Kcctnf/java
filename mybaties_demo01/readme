@@ -1,0 +1,7 @@
+1, 修改pom.xml文件加入mybatis和mysql的支持
+2，新建PO对象---->PO（Persistent Object）---持久化对象
+3, 配置sqlMapConfig.xml文件,添加数据库支持
+4, 添加mapper.xml文件，并且注意将该文件加入到sqlMapConfig.xml文件中去
+5, 测试
+
+
