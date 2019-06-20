@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!--
+    数据库相关信息
+-->
+<configuration>
+
+    <properties resource="db.properties"/>
+
+    <!--**-->
+    <typeAliases>
+        <!--更改单个别名-->
+       <!-- <typeAlias type="com.ming.po.User" alias="user"/>-->
+       <package name="com.ming.po"/>
+    </typeAliases>
+
+    <!--<settings>
+        &lt;!&ndash;设置常量&ndash;&gt;
+        <setting name="" value=""/>
+    </settings>-->
+
+  <!--  <typeHandlers></typeHandlers>-->
+
+    <environments default="developer">
+        <environment id="developer">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--
+    *****
+       稍等
+    -->
+    <mappers>
+       <!-- <mapper resource="UserMapper.xml"/>
+        <mapper resource="ItemsMapper.xml"/>-->
+
+        <!--
+            规则：
+             在以下规则之前，要遵循前面那5条规则
+             1， 将mapper.xml文件和mapper类文件放在同一目录结构下
+             2， 将mapper.xml文件和mapper类文件名称保持完全一致
+        -->
+        <package name="com.ming.mapper"/>
+    </mappers>
+</configuration>

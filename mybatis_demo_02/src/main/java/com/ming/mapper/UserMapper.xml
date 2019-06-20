@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    配置相关映射信息
+     mybatis: 写sql语句
+     Statement ID
+-->
+<mapper namespace="com.ming.mapper.UserMapper">
+
+    <select id="queryUserById" parameterType="int" resultType="user">
+        select * from user where id=#{myId};
+    </select>
+
+    <!--
+        #{} : 占位符
+        ${} : 拼接字符串
+    -->
+   <!-- <select id="queryUserByName" parameterType="java.lang.String" resultType="com.ming.po.User">
+        select * from user where username like #{value};
+    </select>-->
+
+
+    <select id="queryUserByName2" parameterType="java.lang.String" resultType="com.ming.po.User">
+        select * from user where username like '%${value}%';
+    </select>
+
+    <insert id="addUesr" parameterType="com.ming.po.User">
+        insert into user (username,birthday,sex,address) value (#{username},#{birthday},#{sex},#{address});
+    </insert>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id = #{deleteId};
+    </delete>
+
+    <update id="modifyUser" parameterType="com.ming.po.User">
+        update user set
+            username=#{username},birthday=null,sex=null,address=null
+        where id = #{id};
+    </update>
+</mapper>
