@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Jq中常用的基本过滤器</title>
+<link href="css/style.css" rel="stylesheet" />
+<script src="js/jquery-1.11.0.js"></script>
+<script>
+	$(function(){
+		$("#btn1").click(function(){
+			 
+//			 $("div:first").css("background-color","pink") ;
+			 $("div").first().css("background-color","pink") ;
+		}) ;
+		$("#btn2").click(function(){
+			 
+
+			 $("div:even").css("background-color","pink") ;
+		}) ;
+		
+		$("#btn3").click(function(){
+			 
+
+			 $("div:odd").css("background-color","pink") ;
+		}) ;
+		
+		/**
+		 * CSS中转义字符:  <h2></h2>
+		 * Jquery:lt(index)	gt(xx)
+		 */
+		$("#btn4").click(function(){
+			 
+
+			 $("div:gt(2)").css("background-color","pink") ;
+		}) ;
+		
+	}) ;
+</script>
+	</head>
+	<body>
+<input type="button" value="选中当前第一个div元素" id="btn1" />
+<input type="button" value="选中偶数个位的div元素" id="btn2" />
+<input type="button" value="选中奇数个位的div元素" id="btn3" />
+<input type="button" value="选中当前div元素角标大于2的" id="btn4" />
+<br />
+<div id="one"><!--0-->
+	<div class="mini">1-1</div><!--1-->
+</div>
+<div id="two"><!--2-->
+	<div class="mini">2-1</div><!--3-->
+	<div class="mini">2-2</div>
+</div>
+<div id="three">
+	<div class="mini">3-1</div>
+	<div class="mini">3-2</div>
+	<div class="mini">3-3</div>
+</div>
+
+<span>span</span>
+	</body>
+</html>

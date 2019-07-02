@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Jq的基本使用</title>
+		<!--1)导入js库,script-->
+<script src="js/jquery-1.11.0.js"></script>
+<script>
+	/**
+	 * 基本使用步骤:
+	 * 	1)导入js库,script
+	 *  2)确定页面载入事件
+	 *  3)确定具体事件的派发(点击/失去焦点/获取焦点...)
+	 */
+/*确定页面载入事件*/
+$(function(){
+	//确定事件:单击点击事件
+	//选中被点击的这个标签
+	//Jq的id选择器
+	$("#btn1").click(function(){
+	
+		 //改变当前div标签的文本内容   Jq修改标签的文本内容:html("xx")
+		 $("#div1").html("使用Jquery改变了div的内容") ;
+	}) ;
+}) ;
+</script>
+	</head>
+	<body>
+<input type="button" id="btn1" value="点击" />
+<br />
+<div id="div1">
+	div1的内容
+</div>
+	</body>
+</html>

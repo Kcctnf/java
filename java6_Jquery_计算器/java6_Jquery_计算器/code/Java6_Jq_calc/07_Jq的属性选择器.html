@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>属性选择器</title>
+<!--
+	Jq的属性选择器和XML解析:dom解析 xpath技术类似
+		[]:相当于定语,xxx的标签
+	Jq:$("标签名称[href]") :将@标记去掉(指定属性名称)
+	
+	XML解析
+	xpath:"//list[@id='xx']" :@没有省略
+-->
+<script src="js/jquery-1.11.0.js"></script>
+<script>
+	$(function(){
+		//$("标签名称[属性]")
+		
+//		$("a[href]").css("color","red") ;
+		//可以指定多个属性
+		//$("标签名称[属性1][属性2]")
+		//$("a[href][title]").css("color","green") ;
+		
+		//指定多个属性,并且确定属性的值
+		$("a[href][title='test']").css("color","red") ;
+	});
+</script>
+	</head>
+	<body>
+	<a href="#">href 111</a><br />
+	<a href="#" title="test">href 222</a>
+	</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>原生js-计算器</title>
+	<style>
+		/*文本输入框*/
+		input{
+			width: 396px;
+			font-size: 30px;
+			height: 60px;
+			
+			
+		}
+		
+		tr{
+			text-align: center;
+		}
+		td{
+			width: 100px;
+			height: 119px;
+			font-size: 30px;
+		}
+		td:hover{
+			background-color: darkseagreen;
+			cursor: pointer;
+		}
+	</style>
+<!--<script>
+//原生js的页面载入
+/*function init(){*/
+	
+	
+//}
+</script>-->
+	</head>
+<body onload="init()">
+<!--
+	1)页面布局
+		table:5行4列 表格上面有个input 文本框
+		div+Css:层级布局
+	2)将清除键/显示框/退格键/等号键单独设置id
+	  给数字键(将小数点归为数字键)/运算符(+,-,*,/)设置class属性
+	3)分别获取对应的清除键/数字键/运算符键/等号键/显示框...标签对象
+-->
+<!--禁用输入功能-->
+<center><input type="text" id="show" value="0" disabled="disabled" /></center>
+<table border="1px" align="center" width="400px" height="600px" 
+	cellspacing="0" cellpadding="2">
+	<tr>
+		<td id="clear">C</td>
+		<td id="del">退格</td>
+		<td>%</td>
+		<td class="operator">/</td>
+	</tr>
+	<tr>
+		<td class="num">7</td>
+		<td class="num">8</td>
+		<td class="num">9</td>
+		<td class="operator">*</td>
+	</tr>
+	<tr>
+		<td class="num">4</td>
+		<td class="num">5</td>
+		<td class="num">6</td>
+		<td class="operator">-</td>
+	</tr>
+	<tr>
+		<td class="num">1</td>
+		<td class="num">2</td>
+		<td class="num">3</td>
+		<td class="operator">+</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="num">0</td>
+		<td class="num">.</td>
+		<td id="result">=</td>
+	</tr>
+	
+
+</table>
+</body>
+<script>
+	//获取清除建
+	var clear = document.getElementById("clear") ;
+	//获取退格建
+	var del = document.getElementById("del") ;
+	//等号
+	var result = document.getElementById("result") ;
+	//显示框
+	var showResult = document.getElementById("show") ;
+	
+	//定义三个变量，分别第一个数，第二个数，中间 的运算符
+	var numValue1 = "" ;
+	var numValue2 = "" ;
+	var oper = "" ;
+	
+	//获取数字键并设置点击
+	var nums = document.getElementsByClassName("num") ;
+	//遍历
+	for(var i = 0 ; i <nums.length ; i++){
+		//批量设置单击点击
+		nums[i].onclick = function(){
+			
+			//测试s
+			//alert("触发点击") ;
+			//弹框具体的数字内容
+			//var text = this.innerText ;  //普通文本
+			//alert(text) ; 
+			
+			//点击数字键，将内容放到显示框
+			numValue1 += this.innerText ; 
+			showResult.value = numValue1 ;
+			
+			//bug1：解决 第一个位数不能是小数点
+		}
+		
+	}
+	
+//点击运算符
+//逻辑： 将当前的第一个数赋值给第二个数；将第一个数清空掉；保存操作符
+// numValue2 = numValue1;
+//numValue1 = "" ;
+
+
+//等号
+//做四则运算： 抽取一个方法：resultFun()    
+//定义两个变量  one  two  
+//switch表达式  ：除法（不能为0）
+//将运算符保存
+
+//将运算的结果赋值给numValue2   numValue1=""
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Jq的层级选择器</title>
+		<!--导入CSS样式-->
+<link href="css/style.css" rel="stylesheet" />
+<!--导入js库-->
+<script src="js/jquery-1.11.0.js"></script>
+<script>
+	/**
+	 * Jquery的层级选择器:(前三个常用的)
+	 * 		子元素选择器:selector1 selector2
+	 * 		后代:父元素>子元素
+	 *      相邻兄弟:prev + next
+	 * 
+	 * 
+	 * 		sibling: selector1 ~ selector2
+	 * 
+	 * 
+	 * 
+	 */
+//程序入口
+$(function(){
+	$("#btn1").click(function(){
+		//子元素选择器:selector1 selector2
+
+		$("body div").css("background-color","palegreen") ;
+		
+	}) ;
+	
+	$("#btn2").click(function(){
+//		后代:父元素>子元素
+	
+		$("body > div").css("background-color","palegreen") ;
+	}) ;
+	
+	$("#btn3").click(function(){
+		//选中当前所有的div元素
+		//元素选择器
+		$("#one+#two").css("background-color","red") ;
+	}) ;
+	
+	
+	$("#btn4").click(function(){
+		//通配符选择器
+		$("#two ~ #three").css("background-color","greenyellow") ;
+	}) ;
+	
+	
+	
+	
+	
+}) ;
+</script>
+	</head>
+	<body>
+<input type="button" value="选中body的子div元素" id="btn1" />
+<input type="button" value="选中body所有的div元素" id="btn2" />
+<input type="button" value="选中id为的one相邻兄弟元素" id="btn3" />
+<input type="button" value="选中id为two的所有 弟弟的元素" id="btn4" />
+
+<br />
+<div id="one">
+	<div class="mini">1-1</div>
+</div>
+<div id="two">
+	<div class="mini">2-1</div>
+	<div class="mini">2-2</div>
+</div>
+<div id="three">
+	<div class="mini">3-1</div>
+	<div class="mini">3-2</div>
+	<div class="mini">3-3</div>
+</div>
+
+<span>span</span>
+	</body>
+</html>

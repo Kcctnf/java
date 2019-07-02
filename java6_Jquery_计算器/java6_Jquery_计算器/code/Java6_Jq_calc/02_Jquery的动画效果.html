@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Jq的动画效果</title>
+<!--
+	导入js库
+-->
+<script src="js/jquery-1.11.0.js"></script>
+<script>
+	//页面载入事件
+	$(function(){
+		 //选中id="btn1"的标签对象
+		 $("#btn1").click(function(){
+		 	
+		 	//显示动画效果
+		 	//选中img标签(对象)   属性:opacity:透明图(0:完全隐藏,1:完全显示)
+//		 	$("#img1").show(5000) ;
+			
+			//滑动效果:sildeDown(毫秒值):由上到下的滑动显示
+//			$("#img1").slideDown(5000) ;
+
+			//淡入的动画效果:返回值:jQueryfadeIn(speed/毫秒值)
+//			$("#img1").fadeIn(3000) ;
+
+			//自定义动画效果:
+			//animate({width:"",基本属性(height,边框宽度大小),opacity:"0-1之间"},毫秒数)
+		 	$("#img1").animate({width:"1000px",opacity:"0.2"},5000) ;
+		 }) ;
+		 
+		 //隐藏效果
+		 //获取id="btn2"的标签对象
+		 $("#btn2").click(function(){
+//		 	$("#img1").hide(5000) ;
+			
+			//sildeUp(毫秒值):由下到上的滑动隐藏
+//		 	$("#img1").slideUp(3000) ;
+			
+			//淡出效果:
+//			$("#img1").fadeOut(5000) ;
+//自定义隐藏(通过opacity来控制元素的透明度)
+			$("#img1").animate({width:"1200px",opacity:"0"},5000) ;
+		 	
+		 }) ;
+		 
+		 
+	}) ;
+	//完成显示效果
+	
+</script>
+	</head>
+	<body>
+<input type="button" value="显示" id="btn1" />
+<input type="button" value="隐藏" id="btn2" />
+<br />
+<img src="img/1-161104143944.gif" width="500px" id="img1"
+	
+	style="display: none;"  />
+
+	</body>
+</html>
