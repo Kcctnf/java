@@ -33,7 +33,18 @@ public class Database {
         zsets = new HashMap<>();
     }
 
-    public List<String> getList(String key) {
+    public  Map<String,String> getHashes(String key) {
+        Map<String, String> hash =  hashes.get(key);
+        if (hash == null) {
+            hash = new HashMap<>();
+            hashes.put(key, hash);
+        }
+
+        return hash;
+    }
+
+
+    public  List<String> getList(String key) {
 
 
         /*

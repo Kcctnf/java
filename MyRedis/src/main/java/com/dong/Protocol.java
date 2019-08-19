@@ -182,7 +182,21 @@ public class Protocol {
         }
     }
 
-    private static void writeBulkString(OutputStream, String) {
+    public static void writeBulkString(OutputStream os, String s) throws IOException {
 
+        byte[] buf = s.getBytes();
+        os.write('$');
+        os.write(String.valueOf(buf.length).getBytes());
+        os.write("\r\n".getBytes());
+        os.write(buf);
+        os.write("\r\n".getBytes());
+
+    }
+    public static void writeNull(OutputStream os) throws IOException {
+        os.write('$');
+        os.write('-');
+        os.write('1');
+        os.write('\r');
+        os.write('\n');
     }
 }
